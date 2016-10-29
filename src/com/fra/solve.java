@@ -11,25 +11,30 @@ public class solve {
 			Mlength=str.length();
 			return Mlength;
 		}
-		int[] mp=new int[40];
-		Arrays.fill(mp, -1);
+		int cur=0;
+//		int[] mp=new int[40];
+//		Arrays.fill(mp, -1);
 //		for(int i=0;i<30;i++)
 //			System.out.println(mp[i]);
+		Map<Character,Integer>map=new HashMap<Character,Integer>();
 		for(int i=0;i<str.length();i++){
-			int tmp=str.charAt(i)-'a';
-			if(mp[tmp]==-1){
-				mp[tmp]=i;
+			if(map.containsKey(str.charAt(i))){
+				cur=Math.max(map.get(str.charAt(i))+1, cur);
+				if(i-cur+1>Mlength){
+					Mlength=i-cur+1;
+				}
 			}
 			else{
-				Mlength=Math.max(Mlength, i-mp[tmp]);
-				mp[tmp]=i;
+				if(i-cur+1>Mlength)
+					Mlength=i-cur+1;
 			}
+			map.put(str.charAt(i), i);
 		}
 		return Mlength;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str="ababb";
+		String str="abcde123123";
 		System.out.print("最大不重复字符串的长度是：");
 		System.out.println(MaxSubstring(str));
 
