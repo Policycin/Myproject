@@ -29,7 +29,7 @@ public class solve {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str="aaaaa";
+		String str="ababb";
 		System.out.print("最大不重复字符串的长度是：");
 		System.out.println(MaxSubstring(str));
 
