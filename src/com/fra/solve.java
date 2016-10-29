@@ -34,7 +34,10 @@ public class solve {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str="abcde123123";
+		String str=new String();
+		Scanner sc=new Scanner(System.in);
+		System.out.print("请输入所求字符串：");
+		str=sc.next();
 		System.out.print("最大不重复字符串的长度是：");
 		System.out.println(MaxSubstring(str));
 
